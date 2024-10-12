@@ -1,0 +1,17 @@
+.card {
+    border-radius: 12px;
+  }
+  
+  img {
+    border-radius: 50%;
+  }
+  
+  h5 {
+    font-weight: bold;
+  }
+  
+  .btn-outline-success {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  

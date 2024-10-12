@@ -1,0 +1,13 @@
+<!-- src/app/components/shared/card/card.component.html -->
+<div class="card">
+    <div class="card-header">
+        <h5>{{ data.employeeName }}</h5> <!-- Change title to employeeName -->
+    </div>
+    <div class="card-body">
+        <p>Duration: {{ data.duration }} days</p>
+        <p>Salary: {{ data.salary | currency }}</p>
+        <p>Request Date: {{ data.requestDate | date:'MM/dd/yyyy' }}</p>
+        <p>Status: {{ data.status }}</p>
+        <button (click)="onSelect()">Select</button>
+    </div>
+</div>

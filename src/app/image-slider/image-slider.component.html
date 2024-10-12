@@ -1,0 +1,27 @@
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <h4 style="text-align:left ; max-width: 1050px; margin: 0 auto 20px auto;">Latest News:</h4>
+    <div class="carousel-inner" style="max-width: 1050px; margin: 0 auto;">
+      <!-- Use *ngFor and correctly bind object properties -->
+      <div *ngFor="let image of images; let i = index" [ngClass]="{'carousel-item': true, 'active': i === 0}">
+        <img [src]="image.src" class="d-block w-100" alt="{{ image.title }}"
+             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px;">
+  
+        <!-- Caption with semi-transparent background -->
+        <div class="carousel-caption d-none d-md-block"
+             style="background-color: rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 10px;">
+          <h5 style="font-size: 1.3rem; font-weight: bold;">{{ image.title }}</h5>
+          <p style="font-size: 0.9rem;">{{ image.description }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Navigation buttons with icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>

@@ -1,0 +1,55 @@
+<div class="container mt-5">
+    <!-- HEADER VACATION -->
+    <div class="vacation-header d-flex align-items-center justify-content-between" style="margin-top: 9%;">
+      <div class="d-flex align-items-center">
+        <i class="fas fa-clipboard-list fa-2x text-success mr-3"></i>
+        <h5 class="mb-0">Vacation Requests</h5>
+      </div>
+  
+      <!-- SEARCH BAR -->
+      <div class="search-bar d-flex align-items-center" style="display: flex; align-items: center; border: 1px solid #ccc; border-radius: 30px; padding: 5px 15px; width: 250px; background-color: #f8f9fa;">
+        <i class="fas fa-search" style="color: green;"></i>
+        <input type="text" [(ngModel)]="searchTerm" placeholder="Search..." (input)="filterRequests()" style="border: none; outline: none; flex: 1; background-color: transparent; padding-left: 10px;" />
+      </div>
+    </div>
+  
+    <hr />
+  
+    <!-- SELECT ALL CHECKBOX -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div>
+        <input type="checkbox" id="select-all" [(ngModel)]="selectAll" (click)="toggleSelectAll()" />
+        <label for="select-all">Select All</label>
+      </div>
+    </div>
+  
+    <!-- VACATION REQUESTS -->
+    <div class="row">
+      <div class="col-md-4 vacation-card mb-4" *ngFor="let request of filteredRequests">
+        <div class="card" style="background-color: #f8f9fa; border: none; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: box-shadow 0.3s ease;">
+          <div class="card-body" (mouseenter)="this.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)'" (mouseleave)="this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)'">
+            <div class="d-flex mb-3 align-items-center">
+              <input type="checkbox" [checked]="selectAll" />
+              <img [src]="request.img" alt="Profile Image" style="border-radius: 50%; object-fit: cover; width: 50px; height: 50px;" />
+              <h5 [innerHTML]="request.name | highlightSearch: searchTerm" style="margin-left: 15px;"></h5>
+            </div>
+  
+            <p style="font-weight: bold; color: #666b67;">Submitted on:</p>
+            <p style="font-weight: bold; color: #272727;">{{ request.submittedOn | date:'MM/dd/yyyy'}}</p>
+  
+            <p style="font-weight: bold; color: #666b67;">Duration:</p>
+            <p style="font-weight: bold; color: #272727;" [innerHTML]="request.duration.toString() | highlightSearch: searchTerm"></p>
+  
+  
+            <p style="font-weight: bold; color: #666b67;">Salary:</p>
+            <p style="font-weight: bold; color: #272727;" [innerHTML]="request.salary.toString() | highlightSearch: searchTerm"></p>
+  
+            <div class="d-grid gap-2 d-md-block">
+              <button class="btn btn-success me-2" style="width: 45%;">Approve</button>
+              <button class="btn btn-outline-success" style="width: 45%;">Decline</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

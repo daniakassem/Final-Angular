@@ -1,0 +1,33 @@
+/* Navbar Styles */
+.navbar {
+    background-color: #28a745 !important; /* Green background */
+  }
+  
+  .navbar .navbar-brand {
+    color: white !important; /* White brand text */
+  }
+  
+  .navbar .nav-link {
+    color: white !important; /* White link text */
+  }
+  
+  .navbar .nav-link:hover {
+    color: #d4d4d4 !important; /* Lighter color on hover */
+  }
+  
+  .navbar .fas {
+    color: white; /* White icons */
+  }
+  
+  .navbar .fas:hover {
+    color: #d4d4d4; /* Lighter icon color on hover */
+  }
+  
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5); /* White border for the toggle button */
+  }
+  
+  .navbar-toggler-icon {
+    background-color: white; /* White icon for the toggle button */
+  }
+  

@@ -1,0 +1,14 @@
+.select-all {
+    margin-top: 10px;
+}
+
+.vacation-header {
+    font-size: 1.5rem;
+}
+
+.input-group input {
+    max-width: 100%;
+}
+.highlighter{
+    background-color: pink;
+  }
